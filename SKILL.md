@@ -1,15 +1,17 @@
 ---
 name: llms
-description: Consult Claude or Gemini for web research, analysis, second opinions, and YouTube evidence through the user's existing accounts. Prefer official account-authenticated CLIs when usable, with browser fallback for unavailable CLI access or web-only capabilities.
+description: Consult all available LLM providers, including Claude and Gemini, for web research, analysis, second opinions, and YouTube evidence through the user's existing accounts unless explicitly requested otherwise. Prefer official account-authenticated CLIs with browser fallback.
 ---
 
 # LLMs
 
-Consult Claude or Gemini as research assistants. Codex owns the final answer, source verification, and authorized actions. Configure the intended account with `LLMS_ACCOUNT` or the helper's global `--account` option. Verify that account in the selected provider before consulting.
+Consult all available LLM providers as research assistants unless the user explicitly narrows the selection. Codex owns the final answer, source verification, and authorized actions. Configure the intended account with `LLMS_ACCOUNT` or the helper's global `--account` option. Verify that account in each selected provider before consulting.
 
-## Choose a provider and transport
+## Choose providers and transports
 
-Honor a requested provider, model, effort, or interface. Otherwise use Claude's latest general-purpose **Sonnet** or Gemini's latest general-purpose **Flash**, both with **High effort**. Prefer Gemini's web app for direct YouTube analysis. Use both only when comparing their evidence or reasoning adds value.
+Always consult every available provider supported by this skill, currently **Claude and Gemini**, unless the user explicitly requests a subset or excludes a provider. A request naming one provider selects that provider; model, effort, or interface preferences alone do not exclude the others. Use one general-purpose model per provider: Claude's latest **Sonnet** and Gemini's latest **Flash**, both with **High effort**, unless explicitly requested otherwise. Multiple models or transports for the same provider do not require duplicate consultations.
+
+Give each provider the same core question and relevant evidence independently, adapting the prompt for its capabilities. Complete all available providers' consultations before synthesizing the answer. Reconcile agreement, disagreements, and unique evidence, and independently verify decisive claims. If a provider is blocked, try its supported browser fallback, then continue with the available results and report the missing consultation and observed reason. Prefer Gemini's web app for direct YouTube analysis and supply Claude with an accessible transcript or verified excerpts when needed.
 
 Prefer an authenticated official CLI for bounded text consultations. Google's supported CLI is now **Antigravity (`agy`)**, which offers both Gemini Flash and Claude Sonnet under the existing Google account. Direct Claude Code uses the separate Claude account and requires an eligible paid plan. Check account, transport, and model access first; installation alone does not establish readiness. Use the browser when CLI login, plan, quota, model access, or a required capability blocks the task. A CLI and its web app can expose different models and tools. Do not silently replace Sonnet or Flash with a heavier or specialized model.
 

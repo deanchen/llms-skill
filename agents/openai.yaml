@@ -1,7 +1,7 @@
 interface:
   display_name: "LLMs"
   short_description: "Consult Claude and Gemini through CLI or web"
-  default_prompt: "Use $llms to consult Claude or Gemini through my existing account, then verify the important evidence."
+  default_prompt: "Use $llms to consult all available LLM providers through my existing accounts, then reconcile their answers and verify the important evidence."
 
 policy:
   allow_implicit_invocation: true

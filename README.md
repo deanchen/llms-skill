@@ -2,6 +2,8 @@
 
 A Codex skill for consulting Claude and Gemini through existing account plans, using official CLIs when available and the web apps when their capabilities fit the task better.
 
+By default, consult all available providers supported by the skill, currently Claude and Gemini, independently and reconcile their answers. An explicit request for a single provider or a subset overrides this default. Each provider uses High effort unless requested otherwise; unavailable providers are reported after trying the supported fallback.
+
 The skill checks account identity and model access, preserves web search and source retrieval, and keeps Codex responsible for verifying evidence and performing authorized actions. It includes guidance for YouTube analysis and for distinguishing retrieved sources from supplied excerpts or model inferences.
 
 ## Install
