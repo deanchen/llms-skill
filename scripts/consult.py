@@ -14,8 +14,8 @@ import tempfile
 
 ACCOUNT = os.environ.get("LLMS_ACCOUNT", "").strip()
 GEMINI_SETTINGS = Path.home() / ".gemini/antigravity-cli/settings.json"
-GEMINI_MODEL = "gemini-3.8-flash-low"
-ANTIGRAVITY_CLAUDE_MODEL = "claude-sonnet-5-5-medium"
+GEMINI_MODEL = "gemini-3.8-flash-high"
+ANTIGRAVITY_CLAUDE_MODEL = "claude-sonnet-5-5-high"
 GEMINI_DENY = {
     "read_file(*)", "write_file(*)", "command(*)", "unsandboxed(*)",
     "mcp(*)", "execute_url(*)",
@@ -207,7 +207,8 @@ def command(provider, model, transport="auto"):
                 "--print-timeout", "0"]
     binary = executable("claude")
     return [binary, "--safe-mode", "--restricted", "--print",
-            "--model", model or "sonnet", "--tools", "WebSearch,WebFetch",
+            "--model", model or "sonnet", "--effort", "high",
+            "--tools", "WebSearch,WebFetch",
             "--allowedTools", "WebSearch", "WebFetch", "--permission-mode", "dontAsk",
             "--settings", json.dumps({"disableAllHooks": True,
                                       "disableClaudeAiConnectors": True}),

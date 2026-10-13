@@ -52,7 +52,7 @@ For a single invocation without an exported variable, put `--account you@example
 
 Claude defaults to eligible Claude Code account access, with an announced Antigravity Sonnet fallback when available. Pin `--transport claude-code` or `--transport antigravity` to choose explicitly. `--model` selects an available provider model.
 
-Default model identifiers were verified on 2026-10-12: Gemini 3.8 Flash Low and Claude Sonnet 5.5 Medium. Models, eligibility, and quota can change; inspect `agy models` and the official client documentation before updating those defaults.
+Both providers default to **High effort**: `gemini-3.8-flash-high` and `claude-sonnet-5-5-high`, verified on 2026-10-12. Direct Claude Code also receives `--effort high`. Models, eligibility, and quota can change; inspect `agy models` and the official client documentation before updating those defaults.
 
 ## Scope and limitations
 

@@ -24,14 +24,15 @@ request passwords in chat.
 Inspect the current plan, model picker, and relevant effort controls. A model's
 own description of itself is not verification.
 
-- **Claude:** Select the latest available general-purpose Sonnet with its
-  recommended default effort. Honor an explicitly requested model or mode.
+- **Claude:** Select the latest available general-purpose Sonnet with **High
+  effort**. Honor an explicitly requested model, effort, or mode.
   Use a heavier model, maximum effort, or Research mode only when requested or
   warranted by the task. If Sonnet is unavailable, use the available
   general-purpose default and report the observed model and limitation.
-- **Gemini:** Select the latest available general-purpose Flash. The UI may
+- **Gemini:** Select the latest available general-purpose Flash with **High
+  effort**. Honor an explicitly requested effort. The UI may
   call it Flash or Fast; inspect the picker for the actual version. Use
-  Flash-Lite, Pro, a specialized model, or extended thinking only when requested.
+  Flash-Lite, Pro, or a specialized model only when requested.
   If the version is omitted, check current official Google documentation and
   report the observed UI label separately from the documented version.
 

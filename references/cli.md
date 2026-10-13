@@ -42,7 +42,7 @@ claude auth status
 
 Check the email, account authentication, organization if present, and subscription. The helper permits direct use only when the official status succeeds with the intended email and `claude.ai` authentication. It exposes non-secret organization metadata. A Claude Free account should use the web app or available Sonnet access through the Google account.
 
-Run `agy models` to check exact identifiers. Current verified choices are `gemini-3.8-flash-low` and `claude-sonnet-5-5-medium`; use ordinary effort and refresh these defaults when a newer general Flash or Sonnet becomes available. Direct Claude Code's `sonnet` alias follows its available Sonnet. The model's own claimed identity is not verification.
+Run `agy models` to check exact identifiers. The defaults are `gemini-3.8-flash-high` and `claude-sonnet-5-5-high`, both **High effort**. Refresh these defaults when a newer general Flash or Sonnet becomes available. Direct Claude Code uses the `sonnet` alias with `--effort high`. Honor an explicitly requested effort; the model's own claimed identity is not verification.
 
 ## Consultation settings
 

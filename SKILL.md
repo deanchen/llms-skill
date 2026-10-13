@@ -9,7 +9,7 @@ Consult Claude or Gemini as research assistants. Codex owns the final answer, so
 
 ## Choose a provider and transport
 
-Honor a requested provider, model, or interface. Otherwise use Claude's latest general-purpose **Sonnet** for analysis and second opinions, or Gemini's latest general-purpose **Flash** for fast research. Prefer Gemini's web app for direct YouTube analysis. Use both only when comparing their evidence or reasoning adds value.
+Honor a requested provider, model, effort, or interface. Otherwise use Claude's latest general-purpose **Sonnet** or Gemini's latest general-purpose **Flash**, both with **High effort**. Prefer Gemini's web app for direct YouTube analysis. Use both only when comparing their evidence or reasoning adds value.
 
 Prefer an authenticated official CLI for bounded text consultations. Google's supported CLI is now **Antigravity (`agy`)**, which offers both Gemini Flash and Claude Sonnet under the existing Google account. Direct Claude Code uses the separate Claude account and requires an eligible paid plan. Check account, transport, and model access first; installation alone does not establish readiness. Use the browser when CLI login, plan, quota, model access, or a required capability blocks the task. A CLI and its web app can expose different models and tools. Do not silently replace Sonnet or Flash with a heavier or specialized model.
 
