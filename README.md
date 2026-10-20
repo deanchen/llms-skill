@@ -54,7 +54,7 @@ For a single invocation without an exported variable, put `--account you@example
 
 Claude defaults to eligible Claude Code account access, with an announced Antigravity Opus fallback when available. Pin `--transport claude-code` or `--transport antigravity` to choose explicitly. `--model` selects an available provider model.
 
-Both providers default to **High effort**: `gemini-3.8-flash-high` and `claude-opus-5-5-high`. Direct Claude Code uses the `opus` alias with `--effort high`. The Opus identifier is documented in [Google's model guidance](https://www.antigravity.google/docs/enterprise); live Opus consultation has not been verified. Models, eligibility, and quota can change; inspect `agy models` and the official client documentation before updating those defaults.
+Both providers default to **High effort**: `gemini-3.8-flash-high` and `claude-opus-5-5-high`. Direct Claude Code uses the `opus` alias with `--effort high`. A live Antigravity CLI 1.4.3 test on 2026-10-19 confirmed the default Opus model, successful web search, and a completed response; an attempted shell fetch was denied by the configured permissions. See [verification details](references/cli.md#development-verification) for the observed limits. Models, eligibility, and quota can change; inspect `agy models` and the official client documentation before updating those defaults.
 
 ## Scope and limitations
 
