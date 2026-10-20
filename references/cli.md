@@ -2,7 +2,7 @@
 
 ## Supported clients
 
-Use **Antigravity CLI (`agy`)** for Gemini and, when available, Claude Sonnet through the user's existing Google plan. Google retired individual-account Gemini CLI access on June 18, 2026. A successful legacy `gemini` OAuth login does not restore that service; `UNSUPPORTED_CLIENT` means use Antigravity or the web app.
+Use **Antigravity CLI (`agy`)** for Gemini and, when available, Claude Opus through the user's existing Google plan. Google retired individual-account Gemini CLI access on June 18, 2026. A successful legacy `gemini` OAuth login does not restore that service; `UNSUPPORTED_CLIENT` means use Antigravity or the web app.
 
 Use **Claude Code (`claude`)** when the separate Claude account has an eligible plan. Claude Code excludes Free accounts. Claude.ai remains the fallback for the intended Claude service. Do not use Console/API billing to bypass an account-plan limitation.
 
@@ -40,9 +40,9 @@ python3 scripts/consult.py login claude
 claude auth status
 ```
 
-Check the email, account authentication, organization if present, and subscription. The helper permits direct use only when the official status succeeds with the intended email and `claude.ai` authentication. It exposes non-secret organization metadata. A Claude Free account should use the web app or available Sonnet access through the Google account.
+Check the email, account authentication, organization if present, and subscription. The helper permits direct use only when the official status succeeds with the intended email and `claude.ai` authentication. It exposes non-secret organization metadata. A Claude Free account should use the web app or available Opus access through the Google account.
 
-Run `agy models` to check exact identifiers. The defaults are `gemini-3.8-flash-high` and `claude-sonnet-5-5-high`, both **High effort**. Refresh these defaults when a newer general Flash or Sonnet becomes available. Direct Claude Code uses the `sonnet` alias with `--effort high`. Honor an explicitly requested effort; the model's own claimed identity is not verification.
+Run `agy models` to check exact identifiers. The defaults are `gemini-3.8-flash-high` and `claude-opus-5-5-high`, both **High effort**. Refresh these defaults when a newer general Flash or Opus becomes available. Direct Claude Code uses the `opus` alias with `--effort high`. Honor an explicitly requested effort; the model's own claimed identity is not verification.
 
 ## Consultation settings
 
@@ -72,7 +72,7 @@ python3 scripts/consult.py ask gemini --account-verified --prompt 'Search curren
 python3 scripts/consult.py ask claude --transport antigravity --account-verified --prompt 'Analyze the public question and identify uncertainty.'
 ```
 
-Use stdin for long prompts or explicitly authorized private context. `--transport auto` selects Antigravity for Gemini, and authenticated Claude Code for Claude with available Antigravity Sonnet as its fallback. Explicit `--transport claude-code` or `--transport antigravity` controls the account route. The helper announces fallback, checks exact model availability, and never substitutes a different model after an error. `--model` honors a requested identifier.
+Use stdin for long prompts or explicitly authorized private context. `--transport auto` selects Antigravity for Gemini, and authenticated Claude Code for Claude with available Antigravity Opus as its fallback. Explicit `--transport claude-code` or `--transport antigravity` controls the account route. The helper announces fallback, checks exact model availability, and never substitutes a different model after an error. `--model` honors a requested identifier.
 
 Every consultation starts in an empty temporary directory with a minimal inherited environment, excluding API keys and custom endpoints. Antigravity reads `~/.gemini/antigravity-cli/settings.json`; this setup denies file reads/writes, commands, MCP, and browser actuation while allowing public URL retrieval. `useG1Credits` is false by default; the helper rejects paid overage if enabled. The CLI may omit false defaults when serializing its settings.
 

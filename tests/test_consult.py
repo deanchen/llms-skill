@@ -102,7 +102,7 @@ class ConsultationTests(unittest.TestCase):
         with mock.patch.object(consult, "status", return_value={"ready": True}), \
                 mock.patch.object(consult, "require_antigravity") as fallback:
             actual = consult.select_transport("claude", str(self.home), "auto", False, None)
-        self.assertEqual(actual, ("claude-code", "sonnet"))
+        self.assertEqual(actual, ("claude-code", "opus"))
         fallback.assert_not_called()
 
     def test_auto_claude_falls_back_but_explicit_client_does_not(self):
@@ -134,7 +134,8 @@ class ConsultationTests(unittest.TestCase):
 
     def test_direct_claude_command_exposes_only_web_tools(self):
         with mock.patch.object(consult, "executable", return_value="fake-claude"):
-            arguments = consult.command("claude", "sonnet", "claude-code")
+            arguments = consult.command("claude", None, "claude-code")
+        self.assertEqual(arguments[arguments.index("--model") + 1], "opus")
         self.assertEqual(arguments[arguments.index("--tools") + 1], "WebSearch,WebFetch")
         self.assertEqual(arguments[arguments.index("--permission-mode") + 1], "dontAsk")
         for flag in ("--safe-mode", "--restricted", "--strict-mcp-config",

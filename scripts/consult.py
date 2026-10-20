@@ -15,7 +15,7 @@ import tempfile
 ACCOUNT = os.environ.get("LLMS_ACCOUNT", "").strip()
 GEMINI_SETTINGS = Path.home() / ".gemini/antigravity-cli/settings.json"
 GEMINI_MODEL = "gemini-3.8-flash-high"
-ANTIGRAVITY_CLAUDE_MODEL = "claude-sonnet-5-5-high"
+ANTIGRAVITY_CLAUDE_MODEL = "claude-opus-5-5-high"
 GEMINI_DENY = {
     "read_file(*)", "write_file(*)", "command(*)", "unsandboxed(*)",
     "mcp(*)", "execute_url(*)",
@@ -184,7 +184,7 @@ def select_transport(provider, cwd, transport, account_verified, model):
     try:
         info = status("claude", cwd)
         if info["ready"]:
-            return "claude-code", model or "sonnet"
+            return "claude-code", model or "opus"
         reason = "Claude Code has no eligible login for the intended account."
     except (RuntimeError, OSError, ValueError, subprocess.TimeoutExpired) as error:
         reason = f"Claude Code is unavailable: {error}"
@@ -207,7 +207,7 @@ def command(provider, model, transport="auto"):
                 "--print-timeout", "0"]
     binary = executable("claude")
     return [binary, "--safe-mode", "--restricted", "--print",
-            "--model", model or "sonnet", "--effort", "high",
+            "--model", model or "opus", "--effort", "high",
             "--tools", "WebSearch,WebFetch",
             "--allowedTools", "WebSearch", "WebFetch", "--permission-mode", "dontAsk",
             "--settings", json.dumps({"disableAllHooks": True,
@@ -231,7 +231,7 @@ def main():
     ask = sub.add_parser("ask", help="Read question from stdin or --prompt")
     ask.add_argument("provider", choices=("claude", "gemini"))
     ask.add_argument("--prompt")
-    ask.add_argument("--model", help="Explicit provider model; otherwise Sonnet/Flash")
+    ask.add_argument("--model", help="Explicit provider model; otherwise Opus/Flash")
     ask.add_argument("--transport", choices=("auto", "claude-code", "antigravity"),
                      default="auto", help="CLI transport; auto prefers Claude Code for Claude")
     ask.add_argument("--account-verified", action="store_true",

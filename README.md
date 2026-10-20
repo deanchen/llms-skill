@@ -52,9 +52,9 @@ python3 scripts/consult.py ask claude --transport antigravity --account-verified
 
 For a single invocation without an exported variable, put `--account you@example.com` before the subcommand. Long prompts and explicitly authorized private context can be supplied on stdin.
 
-Claude defaults to eligible Claude Code account access, with an announced Antigravity Sonnet fallback when available. Pin `--transport claude-code` or `--transport antigravity` to choose explicitly. `--model` selects an available provider model.
+Claude defaults to eligible Claude Code account access, with an announced Antigravity Opus fallback when available. Pin `--transport claude-code` or `--transport antigravity` to choose explicitly. `--model` selects an available provider model.
 
-Both providers default to **High effort**: `gemini-3.8-flash-high` and `claude-sonnet-5-5-high`, verified on 2026-10-12. Direct Claude Code also receives `--effort high`. Models, eligibility, and quota can change; inspect `agy models` and the official client documentation before updating those defaults.
+Both providers default to **High effort**: `gemini-3.8-flash-high` and `claude-opus-5-5-high`. Direct Claude Code uses the `opus` alias with `--effort high`. The Opus identifier is documented in [Google's model guidance](https://www.antigravity.google/docs/enterprise); live Opus consultation has not been verified. Models, eligibility, and quota can change; inspect `agy models` and the official client documentation before updating those defaults.
 
 ## Scope and limitations
 

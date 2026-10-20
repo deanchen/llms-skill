@@ -24,10 +24,10 @@ request passwords in chat.
 Inspect the current plan, model picker, and relevant effort controls. A model's
 own description of itself is not verification.
 
-- **Claude:** Select the latest available general-purpose Sonnet with **High
+- **Claude:** Select the latest available general-purpose Opus with **High
   effort**. Honor an explicitly requested model, effort, or mode.
-  Use a heavier model, maximum effort, or Research mode only when requested or
-  warranted by the task. If Sonnet is unavailable, use the available
+  Use maximum effort or Research mode only when requested or
+  warranted by the task. If Opus is unavailable, use the available
   general-purpose default and report the observed model and limitation.
 - **Gemini:** Select the latest available general-purpose Flash with **High
   effort**. Honor an explicitly requested effort. The UI may
