@@ -72,7 +72,7 @@ python3 scripts/consult.py ask gemini --account-verified --prompt 'Search curren
 python3 scripts/consult.py ask claude --transport antigravity --account-verified --prompt 'Analyze the public question and identify uncertainty.'
 ```
 
-Use stdin for long prompts or explicitly authorized private context. `--transport auto` selects Antigravity for Gemini, and authenticated Claude Code for Claude with available Antigravity Opus as its fallback. Explicit `--transport claude-code` or `--transport antigravity` controls the account route. The helper announces fallback, checks exact model availability, and never substitutes a different model after an error. `--model` honors a requested identifier.
+Use stdin for long prompts or task-relevant private context authorized by the main skill. `--transport auto` selects Antigravity for Gemini, and authenticated Claude Code for Claude with available Antigravity Opus as its fallback. Explicit `--transport claude-code` or `--transport antigravity` controls the account route. The helper announces fallback, checks exact model availability, and never substitutes a different model after an error. `--model` honors a requested identifier.
 
 Every consultation starts in an empty temporary directory with a minimal inherited environment, excluding API keys and custom endpoints. Antigravity reads `~/.gemini/antigravity-cli/settings.json`; this setup denies file reads/writes, commands, MCP, and browser actuation while allowing public URL retrieval. `useG1Credits` is false by default; the helper rejects paid overage if enabled. The CLI may omit false defaults when serializing its settings.
 

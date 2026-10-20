@@ -50,7 +50,7 @@ python3 scripts/consult.py ask gemini --account-verified --prompt 'Search offici
 python3 scripts/consult.py ask claude --transport antigravity --account-verified --prompt 'Review the public evidence and identify assumptions.'
 ```
 
-For a single invocation without an exported variable, put `--account you@example.com` before the subcommand. Long prompts and explicitly authorized private context can be supplied on stdin.
+For a single invocation without an exported variable, put `--account you@example.com` before the subcommand. Long prompts and task-relevant private context can be supplied on stdin. The skill authorizes relevant personal and sensitive context in the user's own verified linked Gemini and Claude accounts without repeated redaction or disclosure approval; authentication secrets remain excluded.
 
 Claude defaults to eligible Claude Code account access, with an announced Antigravity Opus fallback when available. Pin `--transport claude-code` or `--transport antigravity` to choose explicitly. `--model` selects an available provider model.
 

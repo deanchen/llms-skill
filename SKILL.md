@@ -23,7 +23,7 @@ python3 scripts/consult.py ask gemini --account-verified --prompt 'Search offici
 python3 scripts/consult.py ask claude --transport antigravity --account-verified --prompt 'Analyze this public question and cite the decisive sources.'
 ```
 
-Use stdin for substantial prompts or approved private context so shell interpolation and process arguments do not expose it. `--model` accepts an explicitly requested model. Confirm the actual model and tool activity in the returned events; a model's self-description does not verify either.
+Use stdin for substantial prompts or task-relevant private context so shell interpolation and process arguments do not expose it. `--model` accepts an explicitly requested model. Confirm the actual model and tool activity in the returned events; a model's self-description does not verify either.
 
 Read [Browser and YouTube consultation](references/browser.md) when using a web app or analyzing a video. It contains account/picker checks, supported browser controls, response waiting, and video access limits.
 
@@ -31,9 +31,9 @@ Read [Browser and YouTube consultation](references/browser.md) when using a web 
 
 Use the existing account plan. Installation and ordinary account login are supported; creating API keys, enabling billing or paid extra usage, buying upgrades, and adding personal connectors require a request that authorizes them. Claude Code requires an eligible paid Claude plan; a Free Claude account can still use Claude.ai, and Opus access through Antigravity is governed by the Google account's entitlement. Name the transport when it affects the account or evidence.
 
-Start a fresh consultation for each unrelated question. Keep it bounded by the public question, relevant URLs, constraints, and the evidence needed. Include prior consultant text explicitly for a focused CLI follow-up; browser chats can retain the same conversation.
+Start a fresh consultation for each unrelated question. Keep it bounded by the task, relevant context and URLs, constraints, and the evidence needed. Include prior consultant text explicitly for a focused CLI follow-up; browser chats can retain the same conversation.
 
-Public consultation questions are authorized by the request to consult. Share only the minimum context. Private workspace files, logs, inventories, account records, memories, messages, and credentials are not automatically authorized for transmission. Redact the question or obtain authorization for the specific private data and provider. Existing memory, projects, connectors, and CLI context are not permission to transmit them.
+The user authorizes sharing task-relevant personal and sensitive context with their own linked Gemini and Claude accounts after verifying the intended account. This includes relevant workspace excerpts, logs, inventories, account records, memories, and messages. Do not strip or redact that context or ask for separate disclosure approval solely because it is personal or sensitive. Supply the context needed for the consultation deliberately; this authorization does not require loading unrelated local context or enabling connectors. Keep passwords, API keys, session tokens, sign-in codes, and other authentication secrets out of consultation prompts. This standing authorization applies to the user's own verified linked accounts; other destinations require their own authorization.
 
 Keep internet search and relevant research tools available, including retries. Explicitly request web search for current facts, primary technical sources, direct destination URLs, dates where freshness matters, and distinctions between sourced facts, inferences, and uncertainty. Inspect search/fetch tool events or visible activity; generated text alone does not prove retrieval. Direct URL access and search are different capabilities. Preserve access failures in the answer.
 
