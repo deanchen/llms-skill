@@ -2,7 +2,7 @@
 
 A Codex skill for consulting Claude and Gemini through existing account plans, using official CLIs when available and the web apps when their capabilities fit the task better.
 
-By default, consult all available providers supported by the skill, currently Claude and Gemini, independently and reconcile their answers. An explicit request for a single provider or a subset overrides this default. Each provider uses High effort unless requested otherwise; unavailable providers are reported after trying the supported fallback.
+By default, consult all available providers supported by the skill, currently Claude and Gemini, independently and reconcile their answers. An explicit request for a single provider or a subset overrides this default. Each provider uses Medium effort unless requested otherwise; unavailable providers are reported after trying the supported fallback.
 
 The skill checks account identity and model access, preserves web search and source retrieval, and keeps Codex responsible for verifying evidence and performing authorized actions. It includes guidance for YouTube analysis and for distinguishing retrieved sources from supplied excerpts or model inferences.
 
@@ -54,7 +54,7 @@ For a single invocation without an exported variable, put `--account you@example
 
 Claude defaults to eligible Claude Code account access, with an announced Antigravity Opus fallback when available. Pin `--transport claude-code` or `--transport antigravity` to choose explicitly. `--model` selects an available provider model.
 
-Both providers default to **High effort**: `gemini-3.8-flash-high` and `claude-opus-5-5-high`. Direct Claude Code uses the `opus` alias with `--effort high`. A live Antigravity CLI 1.4.3 test on 2026-10-19 confirmed the default Opus model, successful web search, and a completed response; an attempted shell fetch was denied by the configured permissions. See [verification details](references/cli.md#development-verification) for the observed limits. Models, eligibility, and quota can change; inspect `agy models` and the official client documentation before updating those defaults.
+Both providers default to **Medium effort**: `gemini-4-neon-medium` and `claude-opus-5-5-medium`. Direct Claude Code uses the `opus` alias with `--effort medium`. A live Antigravity CLI 1.4.3 test on 2026-10-19 confirmed Opus at High effort, successful web search, and a completed response; an attempted shell fetch was denied by the configured permissions. See [verification details](references/cli.md#development-verification) for the observed limits. Models, eligibility, and quota can change; inspect `agy models` and the official client documentation before updating those defaults.
 
 ## Scope and limitations
 

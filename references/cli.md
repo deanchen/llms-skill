@@ -42,7 +42,7 @@ claude auth status
 
 Check the email, account authentication, organization if present, and subscription. The helper permits direct use only when the official status succeeds with the intended email and `claude.ai` authentication. It exposes non-secret organization metadata. A Claude Free account should use the web app or available Opus access through the Google account.
 
-Run `agy models` to check exact identifiers. The defaults are `gemini-3.8-flash-high` and `claude-opus-5-5-high`, both **High effort**. Refresh these defaults when a newer general Flash or Opus becomes available. Direct Claude Code uses the `opus` alias with `--effort high`. Honor an explicitly requested effort; the model's own claimed identity is not verification.
+Run `agy models` to check exact identifiers. The defaults are `gemini-4-neon-medium` and `claude-opus-5-5-medium`, both **Medium effort**. Model defaults stay pinned unless explicitly updated. Direct Claude Code uses the `opus` alias with `--effort medium`. Honor an explicitly requested effort; the model's own claimed identity is not verification.
 
 ## Consultation settings
 
